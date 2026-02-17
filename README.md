@@ -31,6 +31,12 @@ The app automatically converts Google Drive share links (e.g., `drive.google.com
 ## Deployment
 This app is designed to be hosted on **GitHub Pages**.
 
+### Still seeing the old blue button? (Mobile Refresh)
+On iPhone (Safari), there is no direct "Hard Refresh" button.
+1.  **Fastest Fix**: Open the link in a **Private Tab** (Incognito).
+2.  **Clear Cache**: Settings -> Safari -> Advanced -> Website Data -> Swipe left on "github.io".
+3.  **Toggle Airplane Mode**: Sometimes forces a fresh reload.
+
 1.  Go to the repository **Settings**.
 2.  Click **Pages** in the left sidebar.
 3.  Under **Build and deployment**, select **Source: Deploy from a branch**.
