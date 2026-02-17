@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Platinum Email Signature Generator</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <div class="container">
+        <!-- Input Section -->
+        <div class="panel inputs">
+            <h1>Signature Generator</h1>
+            <p class="subtitle">Enter your details to generate your Platinum Roofing email signature.</p>
+
+            <form id="sigForm">
+                <div class="form-group">
+                    <label>Full Name</label>
+                    <input type="text" id="inName" placeholder="e.g. Sarah Mikkelsen" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Job Title</label>
+                    <input type="text" id="inTitle" placeholder="e.g. Operations Manager" required>
+                </div>
+
+                <div class="form-group double">
+                    <div>
+                        <label>Office Phone</label>
+                        <input type="tel" id="inOffice" placeholder="(602) 435-3544" value="(602) 435-3544">
+                    </div>
+                    <div>
+                        <label>Cell Phone</label>
+                        <input type="tel" id="inCell" placeholder="(xxx) xxx-xxxx">
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email Address</label>
+                    <input type="email" id="inEmail" placeholder="name@platinumroofingaz.com" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Headshot URL (Optional)</label>
+                    <input type="url" id="inPhoto" placeholder="https://website.com/photo.jpg">
+                    <small>Leave empty to hide photo.</small>
+                </div>
+            </form>
+
+            <div class="actions">
+                <button id="copyBtn" class="primary-btn">Copy Signature</button>
+                <div id="toast" class="toast">Copied to clipboard!</div>
+            </div>
+        </div>
+
+        <!-- Preview Section -->
+        <div class="panel preview-container">
+            <h2>Live Preview</h2>
+            <div class="preview-box">
+                <!-- The Signature HTML goes here -->
+                <div id="signaturePreview">
+                    <!-- Starting Scaffold -->
+                    <table cellpadding="0" cellspacing="0" border="0"
+                        style="font-family: Arial, Helvetica, sans-serif; font-size: 14px; line-height: 1.4; color: #000;">
+                        <tr>
+                            <!-- Photo/Logo Column -->
+                            <td valign="top" style="padding-right: 20px; width: 150px; text-align: center;"
+                                id="sigPhotoCell">
+                                <!-- Headshot -->
+                                <div id="sigPhotoContainer" style="display:none; margin-bottom: 15px;">
+                                    <img id="sigPhoto" src="" alt="Headshot"
+                                        style="width: 120px; border-radius: 4px; display:block; margin: 0 auto;">
+                                </div>
+
+                                <!-- Logo -->
+                                <img src="assets/logo.png"
+                                    alt="Platinum Roofing Group" width="140"
+                                    style="display:block; margin: 0 auto 15px auto;">
+
+                                <!-- Social Icons -->
+                                <div>
+                                    <a href="https://www.facebook.com/PlatinumRoofingAZ/"
+                                        style="text-decoration: none; margin-right: 5px;">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111393.png" width="24"
+                                            height="24" alt="FB" style="border:0; display:inline-block;">
+                                    </a>
+                                    <a href="https://www.instagram.com/platinumroofinggroup/"
+                                        style="text-decoration: none;">
+                                        <img src="https://cdn-icons-png.flaticon.com/512/2111/2111463.png" width="24"
+                                            height="24" alt="IG" style="border:0; display:inline-block;">
+                                    </a>
+                                </div>
+                            </td>
+
+                            <!-- Content Column -->
+                            <td valign="top" style="border-left: 1px solid #ccc; padding-left: 20px;">
+                                <strong style="font-size: 18px; color: #000;" id="sigName">Your Name</strong><br>
+                                <span style="font-size: 14px; color: #333;" id="sigTitle">Job Title</span><br>
+                                <span style="font-size: 14px; color: #333;">Platinum Roofing Group</span>
+
+                                <div
+                                    style="margin-top: 15px; margin-bottom: 15px; border-top: 1px solid #ccc; width: 100%;">
+                                </div>
+
+                                <table cellpadding="0" cellspacing="0" border="0"
+                                    style="font-family: Arial, Helvetica, sans-serif; font-size: 13px; color: #000;">
+                                    <tr>
+                                        <td style="padding-bottom: 4px; font-weight: bold; width: 60px;">Office</td>
+                                        <td style="padding-bottom: 4px;" id="sigOffice">(602) 435-3544</td>
+                                    </tr>
+                                    <tr>
+                                        <td style="padding-bottom: 4px; font-weight: bold;">Cell</td>
+                                        <td style="padding-bottom: 4px;" id="sigCell">(xxx) xxx-xxxx</td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="padding-top: 4px;">
+                                            <a href="#" id="sigEmailLink"
+                                                style="color: #000; text-decoration: underline;">email@platinumroofingaz.com</a>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="2" style="padding-top: 2px;">
+                                            <a href="https://www.platinumroofingaz.com"
+                                                style="color: #000; text-decoration: underline;">www.platinumroofingaz.com</a>
+                                        </td>
+                                    </tr>
+                                </table>
+
+                                <div style="margin-top: 20px;">
+                                    <a href="https://platinumroofingaz.com/reviews"
+                                        style="display: inline-block; background-color: #000; color: #fff; text-decoration: none; padding: 10px 20px; font-weight: bold; border-radius: 4px; font-size: 14px;">Review
+                                        Us Online!</a>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+            <p class="help-text">Click "Copy Signature" then paste into Gmail settings.</p>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
