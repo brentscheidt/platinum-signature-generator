@@ -5,10 +5,13 @@
   --border: #e4e4e7;
   --text: #18181b;
   --text-light: #71717a;
-  --accent: #000; /* Platinum Black */
+  --accent: #000;
+  /* Platinum Black */
 }
 
-* { box-sizing: border-box; }
+* {
+  box-sizing: border-box;
+}
 
 body {
   font-family: 'Inter', sans-serif;
@@ -39,13 +42,51 @@ body {
   min-width: 320px;
 }
 
-h1 { font-size: 1.5rem; margin: 0 0 0.5rem; letter-spacing: -0.02em; }
-h2 { font-size: 1.2rem; margin: 0 0 1rem; color: var(--text-light); font-weight: 500; }
-.subtitle { color: var(--text-light); margin-bottom: 2rem; font-size: 0.9rem; }
+.header-branding {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.5rem;
+}
 
-.form-group { margin-bottom: 1.2rem; }
-.form-group.double { display: flex; gap: 15px; }
-.form-group.double > div { flex: 1; }
+.top-logo {
+  height: 40px;
+  width: auto;
+  object-fit: contain;
+}
+
+h1 {
+  font-size: 1.5rem;
+  margin: 0;
+  letter-spacing: -0.02em;
+}
+
+h2 {
+  font-size: 1.2rem;
+  margin: 0 0 1rem;
+  color: var(--text-light);
+  font-weight: 500;
+}
+
+.subtitle {
+  color: var(--text-light);
+  margin-bottom: 2rem;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+.form-group {
+  margin-bottom: 1.2rem;
+}
+
+.form-group.double {
+  display: flex;
+  gap: 15px;
+}
+
+.form-group.double>div {
+  flex: 1;
+}
 
 label {
   display: block;
@@ -68,12 +109,20 @@ input {
 input:focus {
   outline: none;
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0,0,0,0.1);
+  box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.1);
 }
 
-small { color: var(--text-light); font-size: 0.75rem; margin-top: 4px; display: block; }
+small {
+  color: var(--text-light);
+  font-size: 0.75rem;
+  margin-top: 4px;
+  display: block;
+}
 
-.actions { margin-top: 2rem; position: relative; }
+.actions {
+  margin-top: 2rem;
+  position: relative;
+}
 
 .primary-btn {
   background: var(--accent);
@@ -88,8 +137,13 @@ small { color: var(--text-light); font-size: 0.75rem; margin-top: 4px; display: 
   transition: transform 0.1s, opacity 0.2s;
 }
 
-.primary-btn:hover { opacity: 0.9; }
-.primary-btn:active { transform: scale(0.98); }
+.primary-btn:hover {
+  opacity: 0.9;
+}
+
+.primary-btn:active {
+  transform: scale(0.98);
+}
 
 .preview-container {
   display: flex;
@@ -140,5 +194,7 @@ small { color: var(--text-light); font-size: 0.75rem; margin-top: 4px; display: 
 }
 
 @media (max-width: 768px) {
-  .container { flex-direction: column; }
+  .container {
+    flex-direction: column;
+  }
 }
