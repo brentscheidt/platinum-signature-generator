@@ -125,7 +125,7 @@ small {
 }
 
 .primary-btn {
-  background: var(--accent);
+  background: #1f6feb;
   color: white;
   border: none;
   padding: 0.9rem 1.5rem;
