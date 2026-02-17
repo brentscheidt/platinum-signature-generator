@@ -25,8 +25,14 @@ document.addEventListener("DOMContentLoaded", () => {
         // Text fields
         outputs.name.textContent = inputs.name.value || "Your Name";
         outputs.title.textContent = inputs.title.value || "Job Title";
-        outputs.office.textContent = inputs.office.value || "(602) 435-3544";
-        outputs.cell.textContent = inputs.cell.value || "(xxx) xxx-xxxx";
+
+        const officeVal = inputs.office.value || "(602) 435-3544";
+        outputs.office.textContent = officeVal;
+        outputs.office.href = `tel:${officeVal.replace(/\D/g, '')}`;
+
+        const cellVal = inputs.cell.value || "(xxx) xxx-xxxx";
+        outputs.cell.textContent = cellVal;
+        outputs.cell.href = `tel:${cellVal.replace(/\D/g, '')}`;
 
         // Email Link
         const email = inputs.email.value || "email@platinumroofingaz.com";
