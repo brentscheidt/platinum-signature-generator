@@ -34,7 +34,18 @@ document.addEventListener("DOMContentLoaded", () => {
         outputs.emailLink.href = `mailto:${email}`;
 
         // Photo Logic
-        const photoUrl = inputs.photo.value.trim();
+        let photoUrl = inputs.photo.value.trim();
+
+        // Google Drive Link Converter
+        // Converts https://drive.google.com/file/d/ID/view... to https://lh3.googleusercontent.com/d/ID
+        if (photoUrl.includes("drive.google.com") && photoUrl.includes("/d/")) {
+            const matches = photoUrl.match(/\/d\/(.+?)\//);
+            if (matches && matches[1]) {
+                // Using lh3.googleusercontent.com/d/ID is often more reliable for images than uc?export=view
+                photoUrl = `https://lh3.googleusercontent.com/d/${matches[1]}`;
+            }
+        }
+
         if (photoUrl) {
             outputs.photo.src = photoUrl;
             outputs.photoContainer.style.display = "block";
